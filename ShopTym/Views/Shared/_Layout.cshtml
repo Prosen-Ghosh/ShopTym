@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>_Layout</title>
+    <title>@ViewBag.Title</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -16,8 +16,8 @@
     <!-- Latest Uncompressed JQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 </head>
-<body>
-    <div> 
-    </div>
-</body>
+    <body>
+        
+        @RenderBody();
+    </body>
 </html>
