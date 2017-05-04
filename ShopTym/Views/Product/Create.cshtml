@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="text-center" style="margin-top:60px;">
+    <h2>Create</h2>
+    <h4>Product</h4>
+</div>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-10">
+            @using (Html.BeginForm("Create","Product",FormMethod.Post,new { enctype = "multipart/form-data"}))
+            {
+                @Html.AntiForgeryToken()
+    
+                <div class="form-horizontal">
+        
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <label for="ProductName" class = "control-label col-md-2">Product Name</label>
+                        <div class="col-md-6">
+                            <input type="text" name="ProductName" id="ProductName" class = "form-control" value="" placeholder="Ex: Nokia 3310">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ProductPrice" class="control-label col-md-2">Product Price</label>
+                        
+                        <div class="col-md-6">
+                            <input type="text" name="ProductPrice" id="ProductPrice" class="form-control" value="" placeholder="Ex: Nokia 3310">
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ProductQuentity" class="control-label col-md-2">Product Quentity</label>
+                        
+                        <div class="col-md-6">
+                            <input type="text" name="ProductQuentity" id="ProductQuentity" class="form-control" value="" placeholder="Ex: Nokia 3310">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ProductImage" class="control-label col-md-2">Product Image</label>
+                        
+                        <div class="col-md-6">
+                            
+                            <input type="file" name="ProductImage" id="ProductImage" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Description" class="control-label col-md-2">Description</label>
+                        
+                        <div class="col-md-6">
+                            <input type="text" name="Description" id="ProductDescription" class="form-control" value="" placeholder="Ex: Nokia 3310">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Features" class="control-label col-md-2">Features</label>
+                        
+                        <div class="col-md-6">
+                            <input type="text" name="Features" id="ProductFeatures" class="form-control" value="" placeholder="Ex: Nokia 3310">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="CategoryName" class = "control-label col-md-2">Category Name</label>
+                        <div class="col-md-6">
+                            <select name="CategoryName">
+                                @foreach (var categorie in ViewBag.Categories) {
+                                    <option value="@categorie.CategoryName">@categorie.CategoryName</option>
+                                }
+                            </select>
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-6">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="@TempData["ProductErrorCssClass"]" for="Product Error">
+                @TempData["ProductError"]
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+-->

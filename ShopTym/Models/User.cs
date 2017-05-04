@@ -22,8 +22,5 @@ namespace ShopTym.Models
         public string Address { get; set; }
         public string Image { get; set; }
         public string Roles { get; set; }
-        public string BankName { get; set; }
-        public string AccountName { get; set; }
-        public string CardNumber { get; set; }
     }
 }

@@ -13,9 +13,17 @@ namespace ShopTym.Controllers
         //[Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
-            ShopTymDBContext _context = new ShopTymDBContext();
-            //var a = _context.Products.ToList();
+            ShopTymDBContext context = new ShopTymDBContext();
+            if (User.Identity.IsAuthenticated)
+            {
+                string role = context.Users.Where(u => u.Email == User.Identity.Name).FirstOrDefault().Roles;
 
+                if (role.ToUpper() == "ADMIN") return RedirectToAction("Index", "Categorie");
+                else if (role.ToUpper() == "USER") return RedirectToAction("Index", "User");
+                //return RedirectToAction("Login", "Login");
+            }
+
+            ViewBag.Products = context.Products.ToList();
             return View();
         }
     }

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ShopTym.Models.SaveItem>
+
+@{
+    ViewBag.Title = "SaveItems";
+    Layout = "~/Views/Shared/_UsersLayout.cshtml";
+}
+
+<div class="text-center" style="margin-top:60px;">
+    <h2>Save Items</h2>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-offset-md-2 col-md-10">
+            <table class="table">
+                <tr>
+                    <th>
+                        Customer Id
+                    </th>
+                    <th>
+                        Product Id
+                    </th>
+                    <th>
+                        Save Quentity
+                    </th>
+                    <th>Actions</th>
+                </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SaveQuentity)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id=item.SaveItemId },new { @class = "btn btn-danger"})
+                    </td>
+                </tr>
+            }
+
+            </table>
+        </div>
+    </div>
+</div>

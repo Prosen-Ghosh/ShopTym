@@ -14,6 +14,7 @@ namespace ShopTym
         protected void Application_Start()
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ShopTymDBContext>());
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

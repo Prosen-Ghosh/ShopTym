@@ -10,7 +10,6 @@ namespace ShopTym.Models
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Purchase> Purchases { get; set; }
         public DbSet<CustomerPurchase> CustomerPurchases { get; set; }
         public DbSet<SaveItem> SaveItems { get; set; }
         public DbSet<Categorie> Categories { get; set; }

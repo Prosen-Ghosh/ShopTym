@@ -32,6 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -94,8 +95,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui.theme.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Content\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Content\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Content\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Content\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -103,18 +121,25 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Script.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategorieController.cs" />
+    <Compile Include="Controllers\DiscoverController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\SellController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -122,7 +147,6 @@
     <Compile Include="Models\CustomerPurchase.cs" />
     <Compile Include="Models\CustomerReview.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Purchase.cs" />
     <Compile Include="Models\SaveItem.cs" />
     <Compile Include="Models\Sell.cs" />
     <Compile Include="Models\ShopTymDBContext.cs" />
@@ -143,6 +167,22 @@
     <Content Include="Views\Categorie\Create.cshtml" />
     <Content Include="Views\Categorie\Edit.cshtml" />
     <Content Include="Views\Categorie\Delete.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Discover\Index.cshtml" />
+    <Content Include="Views\Discover\Item.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\SaveItems.cshtml" />
+    <Content Include="Views\User\Purchase.cshtml" />
+    <Content Include="Views\User\Me.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Delete_P.cshtml" />
+    <Content Include="Views\Discover\Search.cshtml" />
+    <Content Include="Views\Sell\Index.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -152,6 +192,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\" />
+    <Folder Include="ServiceProvider\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

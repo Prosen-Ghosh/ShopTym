@@ -12,5 +12,6 @@ namespace ShopTym.Models
         public int SaveItemId {get; set; }
         public int CustomerId {get; set; }
         public int ProductId {get; set; }
+        public int SaveQuentity { get; set; }
     }
 }

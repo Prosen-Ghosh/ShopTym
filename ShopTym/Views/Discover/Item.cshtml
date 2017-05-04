@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ShopTym</a>
+        </div>
+        <div class="navbar-collapse collapse" id="searchbar">
+            <ul class="nav navbar-nav navbar-right">
+                @if (!User.Identity.IsAuthenticated)
+                {
+                <li><a href="~/Registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="~/Login/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                }
+                else
+                {
+                    <li><a href="~/User/Index"> Home</a></li>
+                    <li><a href="~/Login/Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                }
+            </ul>
+
+            <form class="navbar-form">
+                <div class="form-group" style="display:inline;">
+                    <div class="input-group" style="display:table;">
+                        <input type="text" class="form-control" name="search" placeholder="What do you want to buy?">
+                        <span class="input-group-addon" style="width:1%;"><span class="glyphicon glyphicon-search"></span></span>
+                    </div>
+                </div>
+            </form>
+
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+<div class="container" style="margin-top:60px;">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="~/Image/@ViewBag.Products.ProductImage">
+            <div>
+                <h4>Product Name: @ViewBag.Products.ProductName</h4>
+                <p>Product Price: @ViewBag.Products.ProductPrice</p>
+                <p>Product Quentity: @ViewBag.Products.ProductQuentity</p>
+                <p>Product Description: @ViewBag.Products.Description</p>
+                <p>Product Features: @ViewBag.Products.Features</p>
+            </div>
+        </div>
+        
+        <form action="~/Discover/BuyOrSave" method="post">
+            <input type="hidden" name="productId" value="@ViewBag.Products.ProductId">
+            <div class="col-md-6">
+                <table class="space-tr">
+                    <tr>
+                        <td><span>Quentity: </span></td>
+                        <td>
+                            <select class="form-control" name="Quentity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="margin-top: 10px;">
+                        <td>
+                            <span>Save Item: </span>
+                        </td>
+                        <td>
+                            <input type="submit" value="Save Item" name="saveItem" class="btn btn-lg btn-info">
+                        </td>
+                    </tr>
+                    <tr >
+                        <td>
+                            <span>Buy Item: </span>
+                        </td>
+                        <td>
+                            <input type="submit" value="Buy Item" name="buyItem" class="btn btn-lg btn-success">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+

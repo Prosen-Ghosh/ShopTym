@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>_UsersLayout</title>
+    <title>@ViewBag.Title</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -15,9 +15,53 @@
 
     <!-- Latest Uncompressed JQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/Content/jquery-ui.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery-ui.structure.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery-ui.theme.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/Script.js")"></script>
 </head>
 <body>
-    <div> 
+    <div>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">ShopTym</a>
+                </div>
+                <div class="navbar-collapse collapse" id="searchbar">
+                    <ul class="nav navbar-nav navbar-right" style="text-transform:uppercase">
+                        <li><a href="~/User/SaveItems"><span class=""></span> Save Items</a></li>
+                        <li><a href="~/User/Purchase"><span class=""></span> Purchases</a></li>
+                        <li><a href="~/User/Me"><span class=""></span> Profile</a></li>
+                        <!--<li><a href="~/Categorie"><span class=""></span> User List</a></li>-->
+                        <li><a href="~/Login/Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                    
+                    <ul class="nav navbar-nav navbar-right">
+
+                        
+                    </ul>
+
+                    <form action="~/Discover/Search" method="POST" class="navbar-form">
+                        <div class="form-group" style="display:inline;">
+                            <div class="input-group" style="display:table;">
+                                <input type="text" class="form-control" name="search" placeholder="What do you want to buy?">
+                                <span class="input-group-addon" style="width:1%;"><span class="glyphicon glyphicon-search"></span></span>
+                            </div>
+                        </div>
+                    </form>
+
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+        @RenderBody();
     </div>
 </body>
 </html>

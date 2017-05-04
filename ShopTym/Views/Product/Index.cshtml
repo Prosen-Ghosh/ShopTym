@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ShopTym.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="text-center" style="margin-top:60px;">
+    <h2>Product List</h2>
+</div>
+
+<div class="container">
+    <div class="row">
+<p>
+    @Html.ActionLink("Create New", "Create",null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            <label>Product Name</label>
+        </th>
+        <th>
+            <label>Price</label>
+        </th>
+        <th>
+            <label>Quentity</label>
+        </th>
+        <th>
+            Product Image
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Features
+        </th>
+        <th>
+            Category Name
+        </th>
+        <th>
+            Actions
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductQuentity)
+        </td>
+        <td>
+            <img src="~/Image/@item.ProductImage" height="100" width="100">
+            <!--@Html.DisplayFor(modelItem => item.ProductImage)-->
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Features)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductId },new { @class = "btn btn-warning"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductId }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
+    </div>
+</div>

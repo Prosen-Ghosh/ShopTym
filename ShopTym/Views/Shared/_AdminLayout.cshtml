@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>_AdminLayout</title>
+    <title>@ViewBag.Title</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -15,6 +15,13 @@
 
     <!-- Latest Uncompressed JQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet"/>
+
+    <link href="@Url.Content("~/Content/jquery-ui.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery-ui.structure.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery-ui.theme.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/Script.js")"></script>
 </head>
 <body>
     <div>
@@ -31,15 +38,14 @@
                 <div class="navbar-collapse collapse" id="searchbar">
                     <ul class="nav navbar-nav" style="text-transform:uppercase">
                         <li><a href="~/Categorie"><span class=""></span> Categories</a></li>
-                        <li><a href="~/Categorie"><span class=""></span> Products</a></li>
-                        <li><a href="~/Categorie"><span class=""></span> Purchases</a></li>
-                        <li><a href="~/Categorie"><span class=""></span> Sells</a></li>
-                        <li><a href="~/Categorie"><span class=""></span> User List</a></li>
-                        <li><a href="~/Categorie"><span class=""></span> Report</a></li>
+                        <li><a href="~/Product"><span class=""></span> Products</a></li>
+                        <li><a href="~/Sell"><span class=""></span> Sells</a></li>
+                        <!--<li><a href="~/Categorie"><span class=""></span> User List</a></li>-->
+                        <li><a href="~/Report"><span class=""></span> Report</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         
-                        <li><a href="~/Login/Login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                        <li><a href="~/Login/Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                     </ul>
 
                     <!--<form class="navbar-form">

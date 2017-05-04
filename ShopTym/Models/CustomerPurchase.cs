@@ -14,5 +14,6 @@ namespace ShopTym.Models
         public double ProductPrice { get; set; }
         public int ProductQuentity { get; set; }
         public DateTime PurchaseDate { get; set; }
+        public int UserId { get; set; }
     }
 }
